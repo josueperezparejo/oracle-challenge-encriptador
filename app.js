@@ -76,10 +76,13 @@ function mostrarAlerta(resultado) {
         btnCopiar.addEventListener('click', () => {
             const resultado = document.querySelector('.inputResult').textContent
             const resultadoBox = document.querySelector('.resultadoBox')
-
             const mensaje = document.createElement('p')
-            mensaje.textContent = 'Copiado Correctamente'
-            mensaje.classList.add('alert', 'alert-success', 'text-center', 'mt-4')
+
+            const alertaActiva = document.querySelector('.alertaActiva')
+            if(!alertaActiva) {
+                mensaje.textContent = 'Copiado Correctamente'
+                mensaje.classList.add('alert', 'alert-success', 'text-center', 'mt-4', 'alertaActiva')
+            }
 
             resultadoBox.appendChild(mensaje)
 
